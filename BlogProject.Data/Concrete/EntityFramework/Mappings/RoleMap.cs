@@ -30,6 +30,20 @@ namespace BlogProject.Data.Concrete.EntityFramework.Mappings
 
             builder.ToTable("Roles");
 
+            builder.HasData(new Role
+            {
+                Id = 1,
+                Name ="Admin",
+                Description ="Yönetici rolüdür,tüm haklara sahiptir",
+                IsActive = true,
+                IsDeleted = false,
+                CreatedByName ="InitialCreate",
+                CreatedDate = DateTime.Now,
+                ModifiedByName ="InitialCreate",
+                ModifiedDate = DateTime.Now,
+                Note ="Admin Rolüdür",
+            });
+
         }
     }
 }
