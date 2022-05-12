@@ -50,6 +50,7 @@ namespace BlogProject.Data.Concrete.EntityFramework.Mappings
                 RoleId = 1,
                 FirstName ="Kadir",
                 LastName ="Eğriboyun",
+                UserName = "Kean",
                 Email ="kadir@gmail.com",
                 IsActive = true,
                 IsDeleted = false,
