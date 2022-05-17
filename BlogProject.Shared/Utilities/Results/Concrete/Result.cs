@@ -14,19 +14,16 @@ namespace BlogProject.Shared.Utilities.Results.Concrete
         {
             ResultStatus = resultStatus;
         }
-        public Result(ResultStatus resultStatus,string message)
+        public Result(ResultStatus resultStatus,string message):this(resultStatus)
         {
-            ResultStatus = resultStatus;
             Message = message;
         }
-        public Result(ResultStatus resultStatus, string message,Exception exception)
+        public Result(ResultStatus resultStatus, string message,Exception exception):this(resultStatus,message)
         {
-            ResultStatus = resultStatus;
-            Message = message;
             Exception = exception;
         }
-        public ResultStatus ResultStatus { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string Message { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public Exception Exception { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public ResultStatus ResultStatus { get;  }
+        public string Message { get;  }
+        public Exception Exception { get;  }
     }
 }

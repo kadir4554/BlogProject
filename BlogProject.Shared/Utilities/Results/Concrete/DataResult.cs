@@ -8,30 +8,20 @@ using System.Threading.Tasks;
 
 namespace BlogProject.Shared.Utilities.Results.Concrete
 {
-    public class DataResult<T> : IDataResult<T>
+    public class DataResult<T> : Result,IDataResult<T>
     {
-        public DataResult(ResultStatus resultStatus, T data)
+        public DataResult(ResultStatus resultStatus, T data):base(resultStatus)
         {
-            ResultStatus = resultStatus;
             Data = data;
         }
-        public DataResult(ResultStatus resultStatus,string message, T data)
+        public DataResult(ResultStatus resultStatus,string message, T data):base(resultStatus,message)
         {
-            ResultStatus = resultStatus;
-            Message = message;
             Data = data;
         }
-        public DataResult(ResultStatus resultStatus, string message, T data,Exception exception)
-        {
-            ResultStatus = resultStatus;
-            Message = message;
-            Data = data;
-            Exception = exception;
+        public DataResult(ResultStatus resultStatus, string message, T data,Exception exception):base(resultStatus,message,exception)
+        {           
+            Data = data;           
         }
         public T Data { get; }
-
-        public ResultStatus ResultStatus { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string Message { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public Exception Exception { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
     }
 }
